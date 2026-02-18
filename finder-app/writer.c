@@ -5,8 +5,7 @@
 int main(int argc, char **argv)
 {
   if (argc != 3){
-    fprintf(stderr, "ERROR: Incorrect number of arguments.\n");
-    fprintf(stderr, "Invocation: %s <writefile> <writestring>\n", argv[0]);
+    syslog(LOG_ERR, "ERROR: Incorrect number of invocation arguments. Expexted 2, given %d", argc - 1);
     exit(1);
   }
     
